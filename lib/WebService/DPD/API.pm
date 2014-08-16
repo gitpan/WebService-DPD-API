@@ -13,9 +13,60 @@ use namespace::clean;
 
 # ABSTRACT: communicates with DPD API
 
-our $VERSION = '0.001_02';
+our $VERSION = '0.001_03';
+
+ 
+=head1 NAME
+
+WebService::DPD::API
+
+=head1 SYNOPSIS
 
 
+=head1 DESCRIPTION
+
+This module provides a simple wrapper around DPD delivery service API. This is a work in progress and contains incomplete test code, methods are likely to be refactored, you have been warned.
+
+=head1 CONFIGURATION AND ENVIRONMENT
+ 
+-
+ 
+=head1 SEE ALSO
+ 
+-
+ 
+=head1 LICENSE AND COPYRIGHT
+ 
+Copyright (c) 2014 Richard Newsham, Pryanet Ltd
+ 
+This library is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself.
+ 
+=head1 BUGS AND LIMITATIONS
+ 
+See rt.cpan.org for current bugs, if any.
+ 
+=head1 INCOMPATIBILITIES
+ 
+None known.
+ 
+=head1 DIAGNOSTICS
+
+-
+ 
+=head1 DEPENDENCIES
+
+Carp
+Moo
+LWP::UserAgent
+HTTP::Request::Common
+URI::Escape
+Data::Dumper
+JSON
+MIME::Base64
+namespace::clean
+
+=cut
 
 has username => (
 	is => 'ro',
