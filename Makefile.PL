@@ -19,15 +19,29 @@ my %WriteMakefileArgs = (
   "EXE_FILES" => [],
   "LICENSE" => "perl",
   "NAME" => "WebService::DPD::API",
-  "PREREQ_PM" => {},
-  "VERSION" => "0.001_03",
+  "PREREQ_PM" => {
+    "HTTP::Request::Common" => "0;",
+    "JSON" => "0;",
+    "LWP::UserAgent" => "0;",
+    "Moo" => 0,
+    "URI::Escape" => "0;",
+    "namespace::clean" => "0;"
+  },
+  "VERSION" => "v0.0001",
   "test" => {
     "TESTS" => "t/*.t"
   }
 );
 
 
-my %FallbackPrereqs = ();
+my %FallbackPrereqs = (
+  "HTTP::Request::Common" => "0;",
+  "JSON" => "0;",
+  "LWP::UserAgent" => "0;",
+  "Moo" => 0,
+  "URI::Escape" => "0;",
+  "namespace::clean" => "0;"
+);
 
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {

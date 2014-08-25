@@ -12,4 +12,11 @@ meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: WebService-DPD-API
-version: 0.001_03
+requires:
+  HTTP::Request::Common: 0;
+  JSON: 0;
+  LWP::UserAgent: 0;
+  Moo: 0
+  URI::Escape: 0;
+  namespace::clean: 0;
+version: v0.0001
