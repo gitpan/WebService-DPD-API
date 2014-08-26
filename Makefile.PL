@@ -20,14 +20,14 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "WebService::DPD::API",
   "PREREQ_PM" => {
-    "HTTP::Request::Common" => "0;",
-    "JSON" => "0;",
-    "LWP::UserAgent" => "0;",
+    "HTTP::Request::Common" => 0,
+    "JSON" => 0,
+    "LWP::UserAgent" => 0,
     "Moo" => 0,
-    "URI::Escape" => "0;",
-    "namespace::clean" => "0;"
+    "URI::Escape" => 0,
+    "namespace::clean" => 0
   },
-  "VERSION" => "v0.0001",
+  "VERSION" => "v0.0002",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -35,12 +35,12 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
-  "HTTP::Request::Common" => "0;",
-  "JSON" => "0;",
-  "LWP::UserAgent" => "0;",
+  "HTTP::Request::Common" => 0,
+  "JSON" => 0,
+  "LWP::UserAgent" => 0,
   "Moo" => 0,
-  "URI::Escape" => "0;",
-  "namespace::clean" => "0;"
+  "URI::Escape" => 0,
+  "namespace::clean" => 0
 );
 
 

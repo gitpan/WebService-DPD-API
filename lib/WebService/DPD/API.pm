@@ -13,7 +13,7 @@ use namespace::clean;
 
 # ABSTRACT: communicates with DPD API
 
-our $VERSION = 'v0.0001';
+our $VERSION = 'v0.0002';
 
  
 =head1 NAME
@@ -195,56 +195,59 @@ sub get_service
 
 Creates a shipment object
 
-    my $shipment_data = {
-                            jobId => 'null',
-                            collectionOnDelivery =>  "false",
-                            invoice =>  "null",
-                            collectionDate =>  "2014-08-19T09:00:00",
-                            consolidate =>  "false",
-                            consignments => [
-                                                {
-                                                    collectionDetails => {
-                                                                            contactDetails => {
-                                                                                                contactName => "Mr David Smith",
-                                                                                                telephone => "0121 500 2500"
-                                                                                                },
-                                                                            address => $address,
-                                                                            },
-                                                    deliveryDetails => {
-                                                                            contactDetails => {
-                                                                                                contactName => "Mr David Smith",
-                                                                                                telephone => "0121 500 2500"
-                                                                                                                },
-                                                                            notificationDetails => {
-                                                                                                    mobile => "07921 123456",
-                                                                                                    email => 'david.smith@acme.com',
-                                                                                                    },
-                                                                            address => {
-                                                                                        organisation => "ACME Ltd",
-                                                                                        property => "Miles Industrial Estate",
-                                                                                        street => "42 Bridge Road",
-                                                                                        locality => "",
-                                                                                        town => "Birmingham",
-                                                                                        county => "West Midlands",
-                                                                                        postcode => "B1 1AA",
-                                                                                        countryCode => "GB",
-                                                                                        }
-                                                                        },
-                                                    networkCode => "1^12",
-                                                    numberOfParcels => '1',
-                                                    totalWeight => '5',
-                                                    shippingRef1 => "Catalogue Batch 1",
-                                                    shippingRef2 => "Invoice 231",
-                                                    shippingRef3 => "",
-                                                    customsValue => '0',
-                                                    deliveryInstructions => "Please deliver to industrial gate A",
-                                                    parcelDescription => "",
-                                                    liabilityValue => '0',
-                                                    liability => "false",
-                                                    parcel => [],
-                                                }
-                                            ]
-                        };
+	my $shipment_data = {
+							jobId => 'null',
+							collectionOnDelivery =>  "false",
+							invoice =>  "null",
+							collectionDate =>  $date,
+							consolidate =>  "false",
+							consignment => [
+												{
+													collectionDetails => {
+																			contactDetails => {
+																								contactName => "Mr David Smith",
+																								telephone => "0121 500 2500"
+																								},
+																			address => $address,
+																			},
+													deliveryDetails => {
+																			contactDetails => {
+																								contactName => "Mr David Smith",
+																								telephone => "0121 500 2500"
+																												},
+																			notificationDetails => {
+																									mobile => "07921 123456",
+																									email => 'david.smith@acme.com',
+																									},
+																			address => {
+																						organisation => "ACME Ltd",
+																						property => "Miles Industrial Estate",
+																						street => "42 Bridge Road",
+																						locality => "",
+																						town => "Birmingham",
+																						county => "West Midlands",
+																						postcode => "B1 1AA",
+																						countryCode => "GB",
+																						}
+																		},
+													networkCode => "1^12",
+													numberOfParcels => '1',
+													totalWeight => '5',
+													shippingRef1 => "Catalogue Batch 1",
+													shippingRef2 => "Invoice 231",
+													shippingRef3 => "",
+													customsValue => '0',
+													deliveryInstructions => "Please deliver to industrial gate A",
+													parcelDescription => "",
+													liabilityValue => '0',
+													liability => "false",
+													parcels => [],
+													consignmentNumber => "null",
+													consignmentRef =>  "null",
+												}
+											]
+						};
+
 
 	$shipment = $dpd->create_shipment( $shipment_data_example );
 
@@ -660,7 +663,10 @@ sub send_request
 
 1;
 
- 
+=head1 SOURCE CODE
+
+The source code for this module is held in a public git repository on Github : https://github.com/pryanet/WebService-DPD-API
+
 =head1 LICENSE AND COPYRIGHT
  
 Copyright (c) 2014 Richard Newsham, Pryanet Ltd

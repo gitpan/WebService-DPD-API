@@ -13,10 +13,10 @@ meta-spec:
   version: 1.4
 name: WebService-DPD-API
 requires:
-  HTTP::Request::Common: 0;
-  JSON: 0;
-  LWP::UserAgent: 0;
+  HTTP::Request::Common: 0
+  JSON: 0
+  LWP::UserAgent: 0
   Moo: 0
-  URI::Escape: 0;
-  namespace::clean: 0;
-version: v0.0001
+  URI::Escape: 0
+  namespace::clean: 0
+version: v0.0002
